@@ -1,0 +1,50 @@
+_repo: The-Confessions-of-St.-Augustine_3296
+_version: 0.0.1
+contributor:
+  translator:
+    agent_name: Pusey, E. B. (Edward Bouverie)
+    aliases:
+    - Pusey, Edward B. (Edward Bouverie)
+    - Pusey, Edward Bouverie
+    birthdate: 1800
+    deathdate: 1882
+    gutenberg_agent_id: '1157'
+    url: http://www.gutenberg.org/2009/agents/1157
+    wikipedia: http://en.wikipedia.org/wiki/Edward_Bouverie_Pusey
+creator:
+  author:
+    agent_name: Augustine, Saint, Bishop of Hippo
+    birthdate: 354
+    deathdate: 430
+    gutenberg_agent_id: '1156'
+    url: http://www.gutenberg.org/2009/agents/1156
+    wikipedia: http://en.wikipedia.org/wiki/Augustine_of_Hippo
+description: Confessions is the name of a series of thirteen autobiographical books
+  by St. Augustine of Hippo written between AD 397 and AD 398. In modern times, the
+  books are usually published as a single volume known as The Confessions of St. Augustine
+  . The works outline Augustine's sinful youth and his conversion to Christianity.
+  It is widely seen as the first Western autobiography ever written, and was an influential
+  model for Christian writers throughout the following 1000 years of the Middle Ages.
+  It is not a complete autobiography, as it was written in his early 40s, and he lived
+  long afterwards, p.
+gutenberg_bookshelf:
+- Harvard Classics
+- Christianity
+- Classical Antiquity
+gutenberg_issued: '2002-06-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '3296'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Christian saints -- Algeria -- Hippo (Extinct city) -- Biography'
+- !lcc 'BR'
+- !lcsh 'Catholic Church -- Bishops -- Biography'
+- !lcsh 'Bishops -- Algeria -- Hippo (Extinct city) -- Biography'
+- !lcsh 'Augustine, Saint, Bishop of Hippo'
+- GITenberg
+title: The Confessions of St. Augustine
+url: http://www.gutenberg.org/ebooks/3296
