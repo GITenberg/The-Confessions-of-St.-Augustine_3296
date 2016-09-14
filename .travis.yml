@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: OFRW5/kt1GAm8TcoJcsW2E+bBPiJizDZyUlKoERM1u1oyHPKLi0TSrgHc8h264XvXyfHQd4BIF1fmZqdiTaTTfDJMM3CfTiiL/CGtLqBBgpj1WHsKJj5ulZysXx/ipqIjNVN10NhrrzyGe9a815GvB/0fgpfky5rrLXANxcLviuvjSu1s8VSsmmCYAij+62iW+qPLxExaeknAMSVCZCJxFfgJ5nOPltUHVlJ7SCjjZahKtxccftrHbe50jZeLqNWxdqu+wQHqsXdzwSegBNvu5ct9B3MbfdbUpvXyp4nnteeOKUct/j9rQdx7jiAZVwjDB8budlXBh01ldUo72dYU7yqtsJHHkObuIBoj4AmaFHsxfAqiuQCgQOzxOS5oLCOdGCS9X88bT6jmTvc0cYCA/fM2nslA16gWFAJEgvWinyQQWfxScr7ZxamJjMdUID3OY/SMviPXjjr4y6rCyqTZc+2pX6M46FoMY78arVYTuL+LP2KoqRrq8E0OiFfrD+P1zg6Uu/4jrJkhvrjf/8Ymqi9U9kRG0e2JQAzrJvEMa+qlycvFp7ftlrEsu33T2wkYzAuual92qNuriK0bM87Xutu6EUdwbnzdPu2QBksajuuN9befERxxb9YX0xkRqXUH3z54r3Fc4i00Ws4FtIUJlozyuKRniSyOu+sLokk0X4=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/The-Confessions-of-St.-Augustine_3296
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
