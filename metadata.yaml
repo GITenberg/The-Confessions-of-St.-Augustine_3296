@@ -1,5 +1,5 @@
 _repo: The-Confessions-of-St.-Augustine_3296
-_version: 0.1.0
+_version: 0.2.0
 contributor:
   translator:
     agent_name: Pusey, E. B. (Edward Bouverie)
@@ -11,6 +11,9 @@ contributor:
     gutenberg_agent_id: '1157'
     url: http://www.gutenberg.org/2009/agents/1157
     wikipedia: http://en.wikipedia.org/wiki/Edward_Bouverie_Pusey
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Augustine, Saint, Bishop of Hippo
@@ -27,6 +30,8 @@ description: Confessions is the name of a series of thirteen autobiographical bo
   model for Christian writers throughout the following 1000 years of the Middle Ages.
   It is not a complete autobiography, as it was written in his early 40s, and he lived
   long afterwards, p.
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/3296#The-Confessions-of-St.-Augustine
 gutenberg_bookshelf:
 - Harvard Classics
 - Christianity
